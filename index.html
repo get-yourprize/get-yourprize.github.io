@@ -12,6 +12,23 @@
 
   gtag('config', 'AW-10857511068');
 </script>
+<!-- Event snippet for Переход (1) conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-10857511068/9qDPCIms-qMDEJzxobko',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1764,7 +1781,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="ws-m-button-group">
                 <ws-button-group slot="button-group">
                   <ws-button data-type="primary">
-                    <a href="http://mmgpl.com/XRBj7w9p?bb=buyer&pix=pixel_id" rel="nofollow" target="_blank">ВЗЯТИ УЧАСТЬ</a>
+                    <a href="http://mmgpl.com/XRBj7w9p?bb=buyer&pix=pixel_id" rel="nofollow" target="_blank" onclick="gtag_report_conversion(url)">ВЗЯТИ УЧАСТЬ</a>
                   </ws-button>
                 </ws-button-group>
               </div>
